@@ -27,9 +27,5 @@ namespace SearchFight
 
       Console.ReadKey();
     }
-
-    private void Configure() {
-
-    }
   }
 }
