@@ -8,15 +8,15 @@ namespace SearchFight
   {
     public static T GetDeserializedObjectFromResponse<T>(HttpWebResponse response) where T : class
     {
-      T dto = null;
+      T deserializedObject = null;
 
       using (var streamReader = new StreamReader(response.GetResponseStream()))
       {
         string jsonRes = streamReader.ReadToEnd();
-        dto = (T)JsonConvert.DeserializeObject(jsonRes);
+        deserializedObject = JsonConvert.DeserializeObject<T>(jsonRes);
       }
 
-      return dto;
+      return deserializedObject;
     }
   }
 }
